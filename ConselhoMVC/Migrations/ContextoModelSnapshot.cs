@@ -15,8 +15,8 @@ namespace ConselhoMVC.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasAnnotation("ProductVersion", "3.1.21")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("ConselhoMVC.Models.Aluno", b =>
@@ -113,8 +113,6 @@ namespace ConselhoMVC.Migrations
                         .HasForeignKey("TurmaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Turma");
                 });
 
             modelBuilder.Entity("ConselhoMVC.Models.Disciplina", b =>
@@ -131,15 +129,6 @@ namespace ConselhoMVC.Migrations
                         .HasForeignKey("TurmaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Turma");
-                });
-
-            modelBuilder.Entity("ConselhoMVC.Models.Turma", b =>
-                {
-                    b.Navigation("DisciplinaList");
-
-                    b.Navigation("ProfessorList");
                 });
 #pragma warning restore 612, 618
         }
